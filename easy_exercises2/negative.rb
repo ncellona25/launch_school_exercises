@@ -1,5 +1,5 @@
 def negative(num)
-  num > 0? -num : num
+  num.positive? ? -num : num
 end
 
 puts negative(5) == -5

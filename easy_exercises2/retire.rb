@@ -12,5 +12,5 @@ current_year = 2023
 years_to_work = retirement_age - age
 retirement_year = current_year + years_to_work
 
-puts "It's 2023.  You will retire in #{retirement_year}."
+puts "It's #{Time.now.year}.  You will retire in #{retirement_year}."
 puts "You have only #{years_to_work} years of work to go!"
