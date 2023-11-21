@@ -6,7 +6,7 @@ end
 
 def win?(player1, player2)
   (player1 == 'rock' && player2 == 'scissors') ||
-    (player1 == 'paper' && player == 'rock') ||
+    (player1 == 'paper' && player2 == 'rock') ||
     (player1 == 'scissors' && player2 == 'paper')
 end
 
@@ -20,6 +20,8 @@ def display_results(player, computer)
   end
 end
 
+player_score = 0
+computer_score = 0
 loop do  # Main exec loop
   choice = ''
   loop do
@@ -38,10 +40,23 @@ loop do  # Main exec loop
   Kernel.puts("You chose: #{choice}; Computer chose: #{computer_choice}")
 
   display_results(choice, computer_choice)
+  if win?(choice, computer_choice)
+    player_score += 1
+  elsif win?(computer_choice, choice)
+    computer_score += 1
+  end
+
+  if computer_score == 3
+    prompt("Computer reached a score of 3 and won! Game over.")
+    break
+  elsif player_score == 3
+    prompt ("You reached a score of 3 and beat the computer.  Game over.")
+  end
 
   prompt("Do you want to play again?")
   answer = Kernel.gets().chomp()
-  break unless answer.downcase.start_with?('y')
+
+  break if answer.downcase == 'n'
 end
 
 prompt("Thank you for playing!  Goodbye.")
