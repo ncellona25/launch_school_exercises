@@ -49,7 +49,7 @@ end
 #one-liner
 
 def ascii_value(string)
-    string.chars.map { |char| char.ord }.sum
+  string.chars.map { |char| char.ord }.sum
 end
 
 =end

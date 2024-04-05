@@ -9,7 +9,7 @@
 
 # D: Given an integer(year)  Output: string with proper suffix
 
-# A: Conver the integer to string and find its size
+# A: Convert the integer to string and find its size
 #    If the size of the integer is 2 or less (must be in the 1st century)
 #     - Or could just check if integer is less than 100
 #       -3 or more and it depends on the number
